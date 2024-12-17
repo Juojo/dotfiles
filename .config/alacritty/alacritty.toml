@@ -1,0 +1,3 @@
+# import = ["~/.config/alacritty/aura-theme.toml"]
+
+window.opacity=0.4
