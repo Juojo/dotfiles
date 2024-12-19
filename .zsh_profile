@@ -3,4 +3,5 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 alias tmux-sessionizer="~/.local/bin/tmux-sessionizer"
 alias ll="ls -alF"
+alias lsl="ls -l"
 alias idea="idea.sh &"

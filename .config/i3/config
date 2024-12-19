@@ -9,7 +9,13 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+#set $hostname exec --no-startup-id hostname
+#set $host_config ~/.config/i3/config-$($hostname)
+
+#include $host_config
+
+set $mod Mod4
+exec --no-startup-id setxkbmap -layout latam
 bindsym $mod+m move workspace to output next
 
 # exec --no-startup-id feh --bg-scale /home/juojo/Pictures/car_gradient_texture.png
