@@ -1,0 +1,6 @@
+# Where should I put you?
+bindkey -s ^f "tmux-sessionizer\n"
+
+alias tmux-sessionizer="~/.local/bin/tmux-sessionizer"
+alias ll="ls -alF"
+alias idea="idea.sh &"
