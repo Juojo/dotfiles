@@ -5,3 +5,7 @@ alias tmux-sessionizer="~/.local/bin/tmux-sessionizer"
 alias ll="ls -alF"
 alias lsl="ls -l"
 alias idea="idea.sh &"
+alias temps="bpytop"
+alias temp="bpytop"
+
+setxkbmap -layout latam
