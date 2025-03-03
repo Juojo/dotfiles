@@ -1,7 +1,12 @@
 # Where should I put you?
 bindkey -s ^f "tmux-sessionizer\n"
-
 alias tmux-sessionizer="~/.local/bin/tmux-sessionizer"
+
+export PATH=$PATH:~/.local/bin/NotVim
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+alias flowg="wine ~/.local/bin/Flowgorith-executableOnly/Flowgorithm.exe"
+
 alias ll="ls -alF"
 alias lsl="ls -l"
 alias idea="idea.sh &"
