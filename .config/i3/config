@@ -18,7 +18,7 @@ set $mod Mod4
 bindsym $mod+m move workspace to output next
 
 # exec --no-startup-id feh --bg-scale /home/juojo/Pictures/car_gradient_texture.png
-exec --no-startup-id feh --bg-fill /home/juojo/Pictures/fellini.png
+exec --no-startup-id feh --bg-fill /home/juojo/Pictures/puerto2560x1600.png
 exec_always --no-startup-id picom &
 
 
