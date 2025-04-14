@@ -69,3 +69,9 @@ Install [wine, wine-mono and Flowgorithm](https://github.com/emanuele/flowgorith
 ### Notes:
 * In Wine drive Z: always maps to the root (/). So Z:home/juojo/ goes to linux home dir.
 * winecfg command for configuration
+
+## Flowg
+
+* Wine -> flowg ($ flowg)
+* xzoom ($ xzoom) (apt install xzoom)
+* [swcursor](https://github.com/andykitchen/swcursor/) ('~/.local/bin/swcursor' $ .swcursor)
