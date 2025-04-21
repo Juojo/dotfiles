@@ -230,3 +230,6 @@ bindsym XF86KbdBrightnessDown exec light -s sysfs/leds/smc::kbd_backlight -U 5 #
 #sysfs/leds/smc::kbd_backlight
 
 exec xset m 0 0
+
+# https://github.com/i3/i3/issues/3345
+floating_maximum_size 1400 x 1000
