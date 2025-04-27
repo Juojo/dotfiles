@@ -154,6 +154,9 @@ XKBOPTIONS=""
 
 BACKSPACE="guess"
 ```
+or at '.zsh_profile'
+```setxkbmap -layout us -variant customintl```
+
 or run this command (resets to default layout after reboot)
 
 ```setxkbmap -layout us -variant customintl```
