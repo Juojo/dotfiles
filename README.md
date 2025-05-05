@@ -77,7 +77,7 @@ xkb_symbols "customintl" {
 
     name[Group1]= "English (US, intl., custom layout)";
 
-	    key <TLDE> { [ Escape ] };
+    key <LSGT> { [ Escape ] };
     key <AE01> { [	   1,     exclam,    exclamdown ] };
     key <AE02> { [	   2,         at ] };
     key <AE03> { [	   3, numbersign ] };
@@ -128,8 +128,6 @@ xkb_symbols "customintl" {
     key <AB10> { [     slash,   question,  questiondown] };
     key <BKSL> { [ backslash,        bar,       asciitilde,  degree] };
 
-    key <LSGT> { [ backslash,   bar, degree] };
-
     include "level3(ralt_switch)"
 };
 ```
@@ -146,12 +144,10 @@ XKBOPTIONS=""
 
 BACKSPACE="guess"
 ```
-or at '.zsh_profile'
-```setxkbmap -layout us -variant customintl```
 
 or run this command (resets to default layout after reboot)
 
-```setxkbmap -layout us -variant customintl -option lv3:ralt_switch```
+```setxkbmap -layout us -variant customintl -model pc105 -option lv3:ralt_switch```
 
 > https://medium.com/@damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450
 
