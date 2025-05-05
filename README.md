@@ -162,3 +162,10 @@ or run this command (resets to default layout after reboot)
 ```setxkbmap -layout us -variant customintl```
 
 > https://medium.com/@damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450
+
+### Windows custom layout (MSKLC)
+
+![image](https://github.com/user-attachments/assets/86bb3b07-a975-4cf2-b37d-6617977c25f0)
+![image](https://github.com/user-attachments/assets/43748109-4b5c-43fc-84e8-7293ff6b67cd)
+![image](https://github.com/user-attachments/assets/97ef56ae-c33d-4f3e-ab8d-39e82fc4e9b8)
+![image](https://github.com/user-attachments/assets/eed87f20-86fa-4ff3-a6ce-5d955559bdec)
