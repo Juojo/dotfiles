@@ -1,30 +1,21 @@
 ## Scale resolution DPI
 
-Edit: ´~/.Xresource´.
-´´´
+Edit: `~/.Xresource`.
+```
 *dpi: 180
 Xft.dpi: 180
-´´´
+```
 
 Reload the file
 
-´´´ 
+``` 
 $ xrdb ~/.Xresources
-´´´
+```
 
 ## Swap fn with left control
 
 https://github.com/free5lot/hid-apple-patched
 
-## Set keyboard layout
-
-on .profile or .zsh_profile
-
-´setxkbmap -layout latam´
-
-## Configure fn keys
-
-to do
 
 ## Backlight
 
@@ -34,11 +25,12 @@ install xbacklight
 
 ## Synaptics config
 
-sudo apt install xserver-xorg-input-synaptics
+`sudo apt install xserver-xorg-input-synaptics`
 <br>
-Config file location at: ´/etc/X11/xorg.conf.d/70-synaptics.conf´
+<br>
+Config file location at: `/etc/X11/xorg.conf.d/70-synaptics.conf`
 
-
+```
 Section "InputClass"
     Identifier "Synaptics Touchpad"
     MatchDriver "synaptics"
@@ -61,7 +53,7 @@ Section "InputClass"
 
     Option "AccelSpeed" "0.0"  # Aumentar velocidad del puntero
 EndSection
-
+```
 ## Wine
 
 Install [wine, wine-mono and Flowgorithm](https://github.com/emanuele/flowgorithm_linux?tab=readme-ov-file)
@@ -74,11 +66,11 @@ Install [wine, wine-mono and Flowgorithm](https://github.com/emanuele/flowgorith
 
 * Wine -> flowg ($ flowg)
 * xzoom ($ xzoom) (apt install xzoom)
-* [swcursor](https://github.com/andykitchen/swcursor/) ('~/.local/bin/swcursor' $ .swcursor)
+* [swcursor](https://github.com/andykitchen/swcursor/) (`~/.local/bin/swcursor` $ .swcursor)
 
 ## Custom layout
 
-Add the custom layout to '/usr/share/X11/xkb/symbols/us'
+Add the custom layout to `/usr/share/X11/xkb/symbols/us`
 ```
 partial alphanumeric_keys
 xkb_symbols "customintl" {
@@ -134,14 +126,14 @@ xkb_symbols "customintl" {
     key <AB08> { [     comma,       less] };
     key <AB09> { [    period,    greater] };
     key <AB10> { [     slash,   question,  questiondown] };
-    key <BKSL> { [ backslash,        bar,       degree] };
+    key <BKSL> { [ backslash,        bar,       asciitilde,  degree] };
 
     key <LSGT> { [ backslash,   bar, degree] };
 
     include "level3(ralt_switch)"
 };
 ```
-Set the layout at '/etc/default/keyboard'
+Set the layout at `/etc/default/keyboard`
 ```
 # KEYBOARD CONFIGURATION FILE
 
