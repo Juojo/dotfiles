@@ -14,4 +14,3 @@ alias temps="bpytop"
 alias temp="bpytop"
 alias explorador="nautilus"
 
-setxkbmap -layout latam

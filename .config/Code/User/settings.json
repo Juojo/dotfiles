@@ -2,5 +2,6 @@
     "workbench.startupEditor": "none",
     "workbench.sideBar.location": "right",
     "security.workspace.trust.untrustedFiles": "open",
-    "git.openRepositoryInParentFolders": "never"
+    "git.openRepositoryInParentFolders": "never",
+    "liveServer.settings.donotShowInfoMsg": true
 }

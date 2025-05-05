@@ -202,8 +202,6 @@ bar {
 }
 
 bindsym XF86LaunchA exec maim -s -u | xclip -selection clipboard -t image/png
-exec --no-startup-id "setxkbmap -layout latam"
-
 # fn keys
 
 # Screen brigthness controls
@@ -233,3 +231,6 @@ exec xset m 0 0
 
 # https://github.com/i3/i3/issues/3345
 floating_maximum_size 1400 x 1000
+
+exec setxkbmap -layout us -variant customintl -option lv3:ralt_switch
+

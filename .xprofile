@@ -1,1 +1,2 @@
-setxkbmap -layout latam
+setxkbmap -layout us -variant customintl -option lv3:ralt_switch
+
