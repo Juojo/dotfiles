@@ -159,7 +159,7 @@ or at '.zsh_profile'
 
 or run this command (resets to default layout after reboot)
 
-```setxkbmap -layout us -variant customintl```
+```setxkbmap -layout us -variant customintl -option lv3:ralt_switch```
 
 > https://medium.com/@damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450
 
