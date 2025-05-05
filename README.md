@@ -75,3 +75,99 @@ Install [wine, wine-mono and Flowgorithm](https://github.com/emanuele/flowgorith
 * Wine -> flowg ($ flowg)
 * xzoom ($ xzoom) (apt install xzoom)
 * [swcursor](https://github.com/andykitchen/swcursor/) ('~/.local/bin/swcursor' $ .swcursor)
+
+## Custom layout
+
+Add the custom layout to '/usr/share/X11/xkb/symbols/us'
+```
+partial alphanumeric_keys
+xkb_symbols "customintl" {
+
+    name[Group1]= "English (US, intl., custom layout)";
+
+	    key <TLDE> { [ Escape ] };
+    key <AE01> { [	   1,     exclam,    exclamdown ] };
+    key <AE02> { [	   2,         at ] };
+    key <AE03> { [	   3, numbersign ] };
+    key <AE04> { [	   4,     dollar ] };
+    key <AE05> { [	   5,    percent ] };
+    key <AE06> { [         6, asciicircum ] };
+    key <AE07> { [	   7,  ampersand] };
+    key <AE08> { [	   8,   asterisk] };
+    key <AE09> { [	   9,  parenleft] };
+    key <AE10> { [	   0, parenright] };
+    key <AE11> { [     minus, underscore] };
+    key <AE12> { [     equal,       plus] };
+
+    key <AD01> { [	   q,          Q] };
+    key <AD02> { [	   w,          W] };
+    key <AD03> { [	   e,          E,        eacute,           Eacute ] };
+    key <AD04> { [	   r,          R] };
+    key <AD05> { [	   t,          T] };
+    key <AD06> { [	   y,          Y] };
+    key <AD07> { [	   u,          U,        uacute,           Uacute ] };
+    key <AD08> { [	   i,          I,        iacute,           Iacute ] };
+    key <AD09> { [	   o,          O,        oacute,           Oacute ] };
+    key <AD10> { [	   p,          P] };
+    key <AD11> { [ bracketleft,  braceleft] };
+    key <AD12> { [bracketright, braceright] };
+
+    key <AC01> { [	   a,          A,        aacute,           Aacute ] };
+    key <AC02> { [	   s,          S] };
+    key <AC03> { [	   d,          D] };
+    key <AC04> { [	   f,          F] };
+    key <AC05> { [	   g,          G] };
+    key <AC06> { [	   h,          H] };
+    key <AC07> { [	   j,          J] };
+    key <AC08> { [	   k,          K] };
+    key <AC09> { [	   l,          L] };
+    key <AC10> { [ semicolon,      colon,           ntilde, Ntilde] };
+    key <AC11> { [dead_acute, quotedbl, apostrophe, grave] };
+
+    key <AB01> { [	   z,          Z] };
+    key <AB02> { [	   x,          X] };
+    key <AB03> { [	   c,          C] };
+    key <AB04> { [	   v,          V] };
+    key <AB05> { [	   b,          B] };
+    key <AB06> { [	   n,          N,        ntilde,           Ntilde ] };
+    key <AB07> { [	   m,          M] };
+    key <AB08> { [     comma,       less] };
+    key <AB09> { [    period,    greater] };
+    key <AB10> { [     slash,   question,  questiondown] };
+    key <BKSL> { [ backslash,        bar,       degree] };
+
+    key <LSGT> { [ backslash,   bar, degree] };
+
+    include "level3(ralt_switch)"
+};
+```
+Set the layout at '/etc/default/keyboard'
+```
+# KEYBOARD CONFIGURATION FILE
+
+# Consult the keyboard(5) manual page.
+
+XKBMODEL="pc105"
+XKBLAYOUT="us"
+XKBVARIANT="customintl"
+XKBOPTIONS=""
+
+BACKSPACE="guess"
+```
+or at '.zsh_profile'
+```setxkbmap -layout us -variant customintl```
+
+or run this command (resets to default layout after reboot)
+
+```setxkbmap -layout us -variant customintl -option lv3:ralt_switch```
+
+> https://medium.com/@damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450
+
+### Windows custom layout (MSKLC)
+
+[Files](https://github.com/Juojo/dotfiles/tree/master/Windows%20Custom%20Layout%20(MSKLC))
+
+![image](https://github.com/user-attachments/assets/86bb3b07-a975-4cf2-b37d-6617977c25f0)
+![image](https://github.com/user-attachments/assets/43748109-4b5c-43fc-84e8-7293ff6b67cd)
+![image](https://github.com/user-attachments/assets/97ef56ae-c33d-4f3e-ab8d-39e82fc4e9b8)
+![image](https://github.com/user-attachments/assets/eed87f20-86fa-4ff3-a6ce-5d955559bdec)
