@@ -4,3 +4,6 @@ bindkey -s ^f "tmux-sessionizer\n"
 alias tmux-sessionizer="~/.local/bin/tmux-sessionizer"
 alias ll="ls -alF"
 alias idea="idea.sh &"
+alias explorador="nautilus"
+
+setxkbmap -layout us -variant customintl

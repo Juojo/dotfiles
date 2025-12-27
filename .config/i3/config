@@ -197,3 +197,6 @@ bar {
 }
 
 bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png
+
+exec --no-startup-id setxkbmap -model pc105 -layout us -variant customintl
+exec --no-startup-id xset s 0 0 -dpms
