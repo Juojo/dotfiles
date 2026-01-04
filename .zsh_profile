@@ -7,3 +7,5 @@ alias idea="idea.sh &"
 alias explorador="nautilus"
 
 setxkbmap -layout us -variant customintl
+
+alias tmux='TERM=xterm-256color tmux'
