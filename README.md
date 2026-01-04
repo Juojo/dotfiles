@@ -77,7 +77,7 @@ xkb_symbols "customintl" {
 
     name[Group1]= "English (US, intl., custom layout)";
 
-	    key <TLDE> { [ Escape ] };
+    key <LSGT> { [ Escape ] };
     key <AE01> { [	   1,     exclam,    exclamdown ] };
     key <AE02> { [	   2,         at ] };
     key <AE03> { [	   3, numbersign ] };
@@ -128,8 +128,6 @@ xkb_symbols "customintl" {
     key <AB10> { [     slash,   question,  questiondown] };
     key <BKSL> { [ backslash,        bar,       asciitilde,  degree] };
 
-    key <LSGT> { [ backslash,   bar, degree] };
-
     include "level3(ralt_switch)"
 };
 ```
@@ -146,12 +144,10 @@ XKBOPTIONS=""
 
 BACKSPACE="guess"
 ```
-or at '.zsh_profile'
-```setxkbmap -layout us -variant customintl```
 
 or run this command (resets to default layout after reboot)
 
-```setxkbmap -layout us -variant customintl -option lv3:ralt_switch```
+```setxkbmap -layout us -variant customintl -model pc105 -option lv3:ralt_switch```
 
 > https://medium.com/@damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450
 
@@ -163,3 +159,78 @@ or run this command (resets to default layout after reboot)
 ![image](https://github.com/user-attachments/assets/43748109-4b5c-43fc-84e8-7293ff6b67cd)
 ![image](https://github.com/user-attachments/assets/97ef56ae-c33d-4f3e-ab8d-39e82fc4e9b8)
 ![image](https://github.com/user-attachments/assets/eed87f20-86fa-4ff3-a6ce-5d955559bdec)
+
+## Keyd config
+
+at `/etc/keyd/default.conf`
+
+Reload after changes with `sudo keyd reload`
+
+```
+[ids]
+
+*
+
+[main]
+
+capslock = overload(control, esc)
+# \ = esc
+rightmeta = rightalt
+
+rightshift = layer(fn2)
+leftcontrol = layer(fn1)
+
+[fn1]
+
+h = left
+j = down
+k = up
+l = right
+
+n = home
+m = end
+u = pagedown
+i = pageup
+
+tab = capslock
+
+1 = f1
+2 = f2
+3 = f3
+4 = f4
+5 = f5
+6 = f6
+7 = f7
+8 = f8
+9 = f9
+0 = f10
+- = f11
+= = f12
+
+[fn2]
+
+[ = up
+; = left
+' = right
+/ = down
+
+l = home
+. = end
+k = pageup
+, = pagedown
+
+tab = capslock
+
+1 = f1
+2 = f2
+3 = f3
+4 = f4
+5 = f5
+6 = f6
+7 = f7
+8 = f8
+9 = f9
+0 = f10
+- = f11
+= = f12
+```
