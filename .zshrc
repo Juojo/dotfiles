@@ -115,3 +115,6 @@ export NVM_DIR="$HOME/.config/nvm"
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java # JDK 1.8
 export JAVA_HOME=~/.local/bin/java-versions/jdk-23.0.2 # JDK 23
 export PATH=$JAVA_HOME/bin:$PATH
+export PATH=/opt/lampp/bin/:$PATH
+
+alias clear="TERMINFO=/usr/share/terminfo TERM=xterm /usr/bin/clear"
