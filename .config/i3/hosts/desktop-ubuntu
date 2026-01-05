@@ -1,0 +1,4 @@
+set $mod Mod4
+bindsym $mod+m move workspace to output next
+
+exec --no-startup-id feh --bg-fill /home/juojo/Pictures/puerto2560x1440.png

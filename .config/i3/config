@@ -9,18 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-#set $hostname exec --no-startup-id hostname
-#set $host_config ~/.config/i3/config-$($hostname)
-
-#include $host_config
-
 set $mod Mod1
-bindsym $mod+m move workspace to output next
-
-# exec --no-startup-id feh --bg-scale /home/juojo/Pictures/car_gradient_texture.png
-exec --no-startup-id feh --bg-fill /home/juojo/Pictures/puerto2560x1600.png
-#exec_always --no-startup-id picom &
-
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -240,3 +229,5 @@ bindsym XF86KbdBrightnessDown exec light -s sysfs/leds/smc::kbd_backlight -U 5 #
 
 # https://github.com/i3/i3/issues/3345
 floating_maximum_size 1400 x 1000
+
+include ./hosts/$(hostname)

@@ -1,0 +1,3 @@
+set $mod Mod1
+
+exec --no-startup-id feh --bg-fill /home/juojo/Pictures/puerto2560x1600.png
