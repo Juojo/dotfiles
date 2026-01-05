@@ -10,7 +10,9 @@ alias flowg="wine ~/.local/bin/Flowgorith-executableOnly/Flowgorithm.exe"
 alias ll="ls -alF"
 alias lsl="ls -l"
 alias idea="idea.sh &"
-alias temps="bpytop"
-alias temp="bpytop"
 alias explorador="nautilus"
 
+alias tmux='TERM=xterm-256color tmux'
+
+alias temps="bpytop"
+alias temp="bpytop"
