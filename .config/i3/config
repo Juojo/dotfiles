@@ -9,12 +9,17 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+#set $hostname exec --no-startup-id hostname
+#set $host_config ~/.config/i3/config-$($hostname)
+
+#include $host_config
+
 set $mod Mod1
 bindsym $mod+m move workspace to output next
 
 # exec --no-startup-id feh --bg-scale /home/juojo/Pictures/car_gradient_texture.png
-exec --no-startup-id feh --bg-scale /home/juojo/Pictures/street_gradient.png
-# exec --no-startup-id picom
+exec --no-startup-id feh --bg-fill /home/juojo/Pictures/puerto2560x1600.png
+#exec_always --no-startup-id picom &
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -42,10 +47,10 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -196,7 +201,42 @@ bar {
         status_command i3status
 }
 
-bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png
+# Changes
 
-exec --no-startup-id setxkbmap -model pc105 -layout us -variant customintl
+# Set custom layout
+exec --no-startup-id setxkbmap -model pc105 -layout us -variant customintl -option lv3:ralt_switch
+
+# Disable screen saver
 exec --no-startup-id xset s 0 0 -dpms
+
+# Disable cursor acceleration
+exec --no-startup-id xset m 0 0
+
+# Screenshoot
+bindsym Print XF86LaunchA exec maim -s -u | xclip -selection clipboard -t image/png
+
+# Screen brigthness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 3 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 3 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Media volume controls
+bindsym XF86AudioMute exec amixer sset 'Master' toggle
+bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
+bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+
+# Keyboard backlight controls
+bindsym XF86KbdBrightnessUp exec light -s sysfs/leds/smc::kbd_backlight -A 5 #increase Kbd brightness
+bindsym XF86KbdBrightnessDown exec light -s sysfs/leds/smc::kbd_backlight -U 5 #decrease Kbd brightness
+
+#XF86KbdBrightnessDown
+#XF86KbdBrightnessUp
+#sysfs/leds/smc::kbd_backlight
+
+# https://github.com/i3/i3/issues/3345
+floating_maximum_size 1400 x 1000
