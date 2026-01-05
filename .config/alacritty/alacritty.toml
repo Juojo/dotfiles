@@ -1,6 +1,6 @@
 # import = ["~/.config/alacritty/aura-theme.toml"]
 
-window.opacity=0.97
+window.opacity=0.80
 [font]
 size = 11.0
 [font.normal]
